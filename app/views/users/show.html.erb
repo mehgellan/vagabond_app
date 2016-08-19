@@ -1,4 +1,12 @@
+
+
+
+
 <div class="center">
-  Welcome, <%= @user.email %> <br>
-  You joined on: <%= @user.created_at.strftime("%b %d, %Y") %>
+  <div class="profile_image">
+    <img src="http://www.eilatgordinlevitan.com/kurenets/k_pix/kunstler/060508_30_b.gif" alt="" class="circle responsive-img" width="200" height="200"></img>
+  </div>
+  <span class="profile_name">
+    <%= @user.first_name %> <%= @user.last_name %><br></span>
+  <span class="location_name"><%= @user.city %>, <%=@user.city %><br></span>
 </div>
