@@ -4,5 +4,5 @@
 # Examples:
 #
   # movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-  User.create(first_name: 'Luke', last_name: 'Skywalker', email: 'Luke123@aol.com', image: 'stock', city: 'Mos Eisley', state: 'Tatooine',  )
+  User.create(first_name: 'Luke', last_name: 'Skywalker', email: 'Luke123@aol.com', image: 'stock', city: 'Mos Eisley', state: 'Tatooine')
   City.create(city: "San Francisco", state: "California", country: "USA")
