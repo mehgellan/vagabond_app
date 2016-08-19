@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    if current_user
+      render :index
+    else
+      @users = User.all
+    end
   end
 
   def new
