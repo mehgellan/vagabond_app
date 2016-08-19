@@ -2,11 +2,12 @@
   <div class="navbar-fixed">
       <nav>
           <div class="nav-wrapper">
-            <a href="/users" class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">language</i></a>
+            <a href="/" class="btn-floating btn-large waves-effect waves-light"><i class="material-icons">language</i></a>
 
               <ul class="right hide-on-med-and-down">
-                  <li>
-                  <a href="/users/new" class="waves-effect waves-light btn">Log In</a>
+                <li>
+                  <%= link_to "Login", user_login_path, :class => "waves-effect waves-light btn" %>
+                  <%= link_to "Sign Up", new_user_path, :class => "waves-effect waves-light btn" %>
                 </li>
               </ul>
           </div>
