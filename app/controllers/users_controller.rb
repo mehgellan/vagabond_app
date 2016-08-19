@@ -14,13 +14,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 5d4d0f609f2e6004f82a2b403cb0679eb6068733
-=======
->>>>>>> 5d4d0f609f2e6004f82a2b403cb0679eb6068733
   end
 
   def edit
