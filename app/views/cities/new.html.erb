@@ -1,0 +1,17 @@
+<%= form_for @city do |f| %>
+  <div>
+    <%= f.text_field :city, placeholder: "City" %>
+  </div>
+  <div>
+    <%= f.text_field :state, placeholder: "State" %>
+  </div>
+  <div>
+    <%= f.text_field :country, placeholder: "Country" %>
+  </div>
+  <div>
+    <%= f.text_field :image, placeholder: "Image" %>
+  </div>
+    <%= f.submit "Add City", :class => 'waves-effect waves-light btn' %>
+<% end %>
+
+<%= render 'layouts/footer' %>
