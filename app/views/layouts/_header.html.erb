@@ -7,8 +7,8 @@
               <ul class="right hide-on-med-and-down">
                 <li>
                   <% if current_user %>
-                    <%= link_to "Profile", @user, :class => "waves-effect waves-light btn" %>
-                    <%= link_to "Edit Profile", edit_user_path, :class => "waves-effect waves-light btn" %>
+                    <%= link_to "Profile", user_path(current_user[:id]), :class => "waves-effect waves-light btn" %>
+                    <%= link_to "Edit Profile", edit_user_path(current_user[:id]), :class => "waves-effect waves-light btn" %>
                     <%= link_to "Logout", user_logout_path, :class => "waves-effect waves-light btn" %>
                   <% else %>
                     <%= link_to "Login", user_login_path, :class => "waves-effect waves-light btn" %>
