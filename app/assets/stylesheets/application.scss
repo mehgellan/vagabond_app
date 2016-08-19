@@ -16,48 +16,6 @@
  @import "materialize";
  @import "materialize/extras/nouislider";
 
-//  body{
-//     margin: 0;
-//     padding: 0;
-//     font-size: 15px;
-// }
-//
-// nav {
-//     background-color: black;
-//     margin: 0;
-//     overflow: hidden;
-// }
-//
-// nav ul{
-//     margin: 0;
-//     padding: 0;
-// }
-// nav ul li {
-//     /* This allow us to arrange list items in a row, without using float */
-//     display: inline-block;;
-//     float: right;
-//     list-style-type: none;
-// }
-
-/* Create a style for the first level items */
-// nav > ul > li > a {
-//     color: #aaa;
-//     background-color: white;
-//     display: block;
-//     line-height: 2em;
-//     padding: 0.5em 0.5em;
-//     text-decoration: none;
-// }
-//
-// #logo {
-//   float: left;
-// }
-
-// .wrapper {
-//     height: 100%;
-//     z-index: 20;
-//     text-align: center;
-// }
 .nav-wrapper {
   background-color: rgba(0,0,0,0);
   height: 40px;
@@ -68,13 +26,28 @@ body {
   background-image: url(https://media.giphy.com/media/l0HlPeC7bADsk4RnW/giphy.gif);
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
+main {
+  flex: 1 0 auto;
+}
+
+.newpage {
+  background-image: url(http://www.gratisography.com/pictures/277_1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .sign_up {
-    position: absolute;
-    top: 50%;
-    text-align: center;
+  position: absolute;
+  top: 50%;
+  text-align: center;
 }
 
 h1 {
@@ -84,15 +57,23 @@ h1 {
   text-align: center;
   font-family: roboto;
 }
+h5 {
+  color: white;
+  position: absolute;
+  top: 63%;
+  left: 20%;
+  text-align: center;
+  font-family: sans-serif;
+}
 
 #video-background {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -1000;
-    overflow: hidden
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1000;
+  overflow: hidden
 }
