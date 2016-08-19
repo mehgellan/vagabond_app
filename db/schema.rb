@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20160819182757) do
     t.datetime "updated_at", null: false
   end
 
-
   create_table "posts", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "city_id"
