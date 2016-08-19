@@ -1,24 +1,25 @@
-# README
+# Project Vagabond
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A travel community for users to share city-specific tips ("posts" or "logs") about their favorite locations around the world. Full-stack Rails App deployed on Heroku (heroku link).
 
-Things you may want to cover:
+### Technologies Used
 
-* Ruby version
+* Ruby, Rails
+* Paperclip
+* Materialize, SCSS
+* AngularJS
 
-* System dependencies
+### Deliverables
 
-* Configuration
+* Basic Auth & Profiles
+* Full CRUD
+* Validations & Authorizations
+* Commenting
 
-* Database creation
+#### Wireframes
 
-* Database initialization
+![Alt text](http://i.imgur.com/VAFz0Lm.png "Vagabond Wireframes")
 
-* How to run the test suite
+#### ERD - Entity Relationship Diagram
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![Alt text](http://i.imgur.com/et1AXsZ.png "Vagabond ERD")
