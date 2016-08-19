@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   post "/sessions", to: "sessions#create"
   get "/users/:id/edit", to: "users#edit", as: "edit_user"
   patch "/users/:id", to: "users#update"
+
+  get "/cities", to: "cities#index", as: "cities"
 end
