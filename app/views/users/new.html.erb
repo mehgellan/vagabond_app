@@ -1,3 +1,6 @@
+<div class="form-wrapper">
+<div class="container">
+<div class="col-md-6">
 <%= form_for @user do |f| %>
   <div>
       <%= f.text_field :first_name, placeholder: "First Name" %>
@@ -17,7 +20,10 @@
     <div>
       <%= f.password_field :password, placeholder: "Password" %>
     </div>
-<%= f.submit "Sign Up", :class => 'waves-effect waves-light btn' %>
+<%= f.submit "Sign Up", :class => 'signbtn waves-effect waves-light btn' %>
 <% end %>
+</div>
+</div>
+</div>
 
-<%= render 'layouts/footer' %>
+<!-- <%= render 'layouts/footer' %> -->
