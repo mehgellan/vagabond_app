@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params) # TODO: add error handling
+    login(@user)
     redirect_to @user
   end
 
