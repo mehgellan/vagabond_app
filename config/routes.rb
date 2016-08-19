@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   patch "/users/:id", to: "users#update"
 
   get "/cities", to: "cities#index", as: "cities"
+  get "/cities/new", to: "cities#new", as: "new_city"
+  post "/cities", to: "cities#create"
+  get "/cities/:id", to: "cities#show", as: "city"
 end
