@@ -1,13 +1,8 @@
-<div class="city_wrapper">
-  <div class="cityShow col s12">
-    <h2> Welcome to <%= @city.city %></h2>
-  </div>
-<div class="row">
-  <span>  <i class="material-icons">location</i>
-    <%= @city.state %>
-    <i class="material-icons">country</i>
-    <%= @city.country %></span>
+<div class="intro deep-orange lighten-2 z-depth-1">
+  <h1 class="white-text text-lighten-5">Welcome to <%= @city.city %></h1>
+</h5>
 </div>
-<%= link_to "Add new post!", new_post_path(@city.id) %>
-
+<br>
+<div class="post center">
+  <%= link_to "Add new post!", new_post_path(@city.id) %>
 </div>
