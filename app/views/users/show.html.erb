@@ -24,7 +24,7 @@
         <p><%= f.text %></p>
       </div>
       <div class="card-action">
-        <a>link_to f.title, user_post_path(current_user[:id])</a>
+        <%= link_to f.title, user_post_path(f.id)%>
       </div>
     </div>
   </div>

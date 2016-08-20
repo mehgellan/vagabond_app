@@ -11,8 +11,11 @@
       <div class="card-content">
         <p><%= @post.text %></p>
       </div>
+      <div class="card-content">
+        <p>by: <%= @post.user.first_name %> <%= @post.user.last_name%></p>
+      </div>
       <div class="card-action">
-        <a href="#"><%= @post.title %></a>
+        <a><%= @post.title %></a>
       </div>
     </div>
   </div>
