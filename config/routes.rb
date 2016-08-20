@@ -18,6 +18,5 @@ Rails.application.routes.draw do
   get "/posts", to: "posts#index", as: "user_posts"
   get "/cities/:city_id/posts/new", to: "posts#new", as: "new_post"
   post "/cities/:city_id/posts", to: "posts#create", as: "create_post"
-  get "/users/:user_id/posts/:post_id", to: "posts#show", as: "user_post"
   get "/users/:user_id/posts/:id", to: "posts#show", as: "user_post"
 end
