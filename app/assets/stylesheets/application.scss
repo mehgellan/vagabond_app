@@ -63,11 +63,22 @@ main {
   padding-bottom: 10px;
 }
 
-h1 {
+#splash {
   color: white;
   position: absolute;
   top: 50%;
   left: 3%;
+  text-align: center;
+  font-family: roboto;
+}
+
+.city_wrapper {
+  text-align: center;
+}
+.cityShow {
+  color: white;
+  position: absolute;
+  top: 10%;
   text-align: center;
   font-family: roboto;
 }
@@ -114,6 +125,10 @@ h5 {
   font-size: 20px;
 }
 
+.profile_image {
+  padding-top: 2%;
+}
+
 .card {
   width: 360px;
   text-align: center;
@@ -124,4 +139,22 @@ h5 {
 
 .profile_image {
   padding-top: 2%;
+}
+
+
+.intro
+{
+  background-image: url(https://hd.unsplash.com/photo-1450149632596-3ef25a62011a);
+  background-repeat: no-repeat;
+  background-size: cover;;
+  text-align: center;
+  padding-top: 13%;
+  padding-bottom: 13%;
+  margin-bottom: 50px;
+}
+
+.intro h1
+{
+  font-weight: 900;
+  text-transform: uppercase;
 }
