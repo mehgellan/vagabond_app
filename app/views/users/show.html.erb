@@ -1,4 +1,32 @@
+
+
+
+
 <div class="center">
-  Welcome, <%= @user.email %> <br>
-  You joined on: <%= @user.created_at.strftime("%b %d, %Y") %>
+  <div class="profile_image">
+    <img src="http://www.eilatgordinlevitan.com/kurenets/k_pix/kunstler/060508_30_b.gif" alt="" class="circle responsive-img" width="200" height="200"></img>
+  </div>
+  <span class="profile_name">
+    <%= @user.first_name %> <%= @user.last_name %><br></span>
+  <span class="location_name"><%= @user.city %>, <%=@user.state %><br></span>
 </div>
+<% @user.posts.each do |f| %>
+<div class="col s12 m7 profile_card">
+  <div class="p_card">
+  <h3 class="header">city</h3>
+  </div>
+  <div class="card small horizontal">
+    <div class="card-image">
+      <img src="http://www.indypendent.org/wp-content/photos/page14_kunstler.jpg">
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <p><%= f.text %></p>
+      </div>
+      <div class="card-action">
+        <%= link_to f.title, user_post_path(f.id)%>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
