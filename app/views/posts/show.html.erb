@@ -12,7 +12,10 @@
         <p><%= @post.text %></p>
       </div>
       <div class="card-content">
-        <p>by: <%= @post.user.first_name %> <%= @post.user.last_name%></p>
+        <p><div class="chip">
+    <img src="http://www.eilatgordinlevitan.com/kurenets/k_pix/kunstler/060508_30_b.gif" alt="Contact Person">
+    <%= @post.user.first_name %> <%= @post.user.last_name%></p>
+  </div>
       </div>
       <div class="card-action">
         <a><%= @post.title %></a>
