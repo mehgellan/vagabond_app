@@ -1,0 +1,17 @@
+<div class="form-wrapper">
+  <div class="container">
+    <div class="col-md-6">
+      <%= form_for create_post_path, method: "post" do |f| %>
+        <div>
+          <%= f.text_field :title, placeholder: "Title" %>
+        </div>
+
+        <div>
+          <%= f.text_area :text, placeholder: "Text"%>
+        </div>
+
+        <%= f.submit "Post", :class => 'waves-effect waves-light btn' %>
+      <% end %>
+    </div>
+  </div>
+</div>

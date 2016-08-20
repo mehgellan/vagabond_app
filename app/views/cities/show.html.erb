@@ -1,3 +1,7 @@
+<h1><%= @city.city %></h1>
+<p>State: <%= @city.state %></p>
+<p>Country: <%= @city.country %></p>
+<%= link_to "Add new post!", new_post_path(@city.id) %> <!-- TODO: style like button -->
 <div class="intro deep-orange lighten-2 z-depth-1">
   <h1 class="white-text text-lighten-5">Welcome to <%= @city.city %></h1>
 </h5>
