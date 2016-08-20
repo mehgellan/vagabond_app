@@ -12,6 +12,10 @@ class PostsController < ApplicationController
     @city.posts.push(post_params)
   end
 
+  def show
+    @post = Post.find_by_id(params[:post_id])
+  end
+
   private
 
     def post_params

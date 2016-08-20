@@ -67,6 +67,7 @@ h1 {
   color: white;
   position: absolute;
   top: 50%;
+  left: 3%;
   text-align: center;
   font-family: roboto;
 }
@@ -119,4 +120,8 @@ h5 {
 }
 .profile_card {
   margin-left: 5%;
+}
+
+.profile_image {
+  padding-top: 2%;
 }
