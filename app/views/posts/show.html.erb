@@ -21,11 +21,9 @@
         <a><%= @post.title %></a>
       </div>
       <div class="card-action">
-        <a href="#"><i class="small material-icons">delete</i></a>
         <%= link_to "Edit", edit_city_post_path %>
+        <%= link_to "Delete", delete_city_post_path, method: :delete %>
       </div>
     </div>
   </div>
-</div>
-<div class="edit_post"
 </div>
