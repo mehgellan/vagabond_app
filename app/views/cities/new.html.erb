@@ -1,17 +1,22 @@
-<%= form_for @city do |f| %>
-  <div>
-    <%= f.text_field :city, placeholder: "City" %>
-  </div>
-  <div>
-    <%= f.text_field :state, placeholder: "State" %>
-  </div>
-  <div>
-    <%= f.text_field :country, placeholder: "Country" %>
-  </div>
-  <div>
-    <%= f.text_field :image, placeholder: "Image" %>
-  </div>
-    <%= f.submit "Add City", :class => 'waves-effect waves-light btn' %>
-<% end %>
+<div class="form-wrapper">
+  <div class="container">
+    <div class="col-md-6">
 
-<%= render 'layouts/footer' %>
+      <%= form_for @city do |f| %>
+      <div>
+        <%= f.text_field :city, placeholder: "City" %>
+      </div>
+      <div>
+        <%= f.text_field :state, placeholder: "State" %>
+      </div>
+      <div>
+        <%= f.text_field :country, placeholder: "Country" %>
+      </div>
+      <div>
+        <%= f.text_field :image, placeholder: "Image" %>
+      </div>
+      <%= f.submit "Add City", :class => 'waves-effect waves-light btn' %>
+      <% end %>
+    </div>
+  </div>
+</div>
