@@ -21,7 +21,7 @@
         <a><%= @post.title %></a>
       </div>
       <div class="card-action">
-        <%= link_to edit_city_post_path(city) do %>
+        <%= link_to edit_city_post_path do %>
           <i class="small material-icons">mode_edit</i>
         <% end %>
         <%= link_to "Delete", delete_city_post_path, method: :delete %>
