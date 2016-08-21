@@ -57,7 +57,7 @@ main {
   width: 500px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: auto;
+  margin-top: 70px;
   margin-bottom: auto;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -93,7 +93,6 @@ h5 {
 .login{
   position: relative;
   top: 50%;
-  left: 20%;
 }
 .form_for{
   color: black;
@@ -141,9 +140,7 @@ h5 {
   padding-top: 2%;
 }
 
-
-.intro
-{
+.intro {
   background-image: url(https://hd.unsplash.com/photo-1450149632596-3ef25a62011a);
   background-repeat: no-repeat;
   background-size: cover;;
@@ -153,8 +150,7 @@ h5 {
   margin-bottom: 50px;
 }
 
-.intro h1
-{
+.intro h1 {
   font-weight: 900;
   text-transform: uppercase;
 }
