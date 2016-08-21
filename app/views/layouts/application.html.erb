@@ -14,6 +14,7 @@
     <div class="header">
       <%= render 'layouts/header' %>
     </div>
+<<<<<<< HEAD
 
 
     <% flash.each do |name, msg| %>
@@ -27,6 +28,16 @@
 
             <%= yield %>
 
+=======
+    <div class="container">
+      <% flash.each do |name, msg| %>
+        <div class="alert <% if name=="error" %> alert-danger <% else %> alert-info <% end %>">
+          <%= msg %>
+        </div>
+      <% end %>
+    </div>
+      <%= yield %>
+>>>>>>> switt
 
   </body>
 </html>
