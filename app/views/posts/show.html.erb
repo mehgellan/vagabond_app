@@ -1,7 +1,6 @@
 
 <div class="col s12 m7 profile_card">
   <div class="p_card">
-  <h3 class="header">City</h3>
   </div>
   <div class="card small horizontal">
     <div class="card-image">
@@ -15,10 +14,17 @@
         <p><div class="chip">
     <img src="http://www.eilatgordinlevitan.com/kurenets/k_pix/kunstler/060508_30_b.gif" alt="Contact Person">
     <%= @post.user.first_name %> <%= @post.user.last_name%></p>
+
   </div>
       </div>
       <div class="card-action">
         <a><%= @post.title %></a>
+      </div>
+      <div class="card-action">
+        <%= link_to edit_city_post_path do %>
+          <i class="small material-icons">mode_edit</i>
+        <% end %>
+        <%= link_to raw('<i class="small material-icons">delete</i>'), delete_city_post_path, method: :delete %>
       </div>
     </div>
   </div>
