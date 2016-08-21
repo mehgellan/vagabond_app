@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def index
     if current_user
       render :index
@@ -12,8 +13,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params) # TODO: add error handling
+    @user = User.new(user_params)
     if @user.save
+      flash[:success] = "Succesfully created account."
+      login(@user)
       redirect_to user_path(@user)
     else
       flash[:error] = @user.errors.full_messages.join(", ")
@@ -26,19 +29,18 @@ class UsersController < ApplicationController
   end
 
   def edit
-    user_id = params[:id]
-    @user = User.find_by_id(user_id)
+    @user = User.find_by_id(params[:id])
   end
 
   def update
-    user_id = params[:id]
-    @user = User.find_by_id(user_id) # TODO: add error handling
+    @user = User.find_by_id(params[:id])
     @user.update_attributes(user_params)
+    flash[:notice] = "Profile update succesful!"
     redirect_to user_path(@user)
   end
 
-
   private
+
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :city, :state, :password)
     end
