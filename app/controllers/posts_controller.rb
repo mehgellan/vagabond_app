@@ -18,7 +18,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find_by_id(params[:id])
+    @post = Post.all(:order => "created_at DESC")
+
   end
 
   private
