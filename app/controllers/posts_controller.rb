@@ -24,6 +24,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @city = City.find_by_id(params[:city_id])
     @post = Post.find_by_id(params[:id])
   end
 

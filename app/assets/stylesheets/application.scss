@@ -130,8 +130,9 @@ h5 {
 }
 
 .card {
-  width: 360px;
   text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 .profile_card {
   margin-left: 5%;
@@ -154,4 +155,16 @@ h5 {
 .intro h1 {
   font-weight: 900;
   text-transform: uppercase;
+}
+
+#delete_edit{
+  position: relative;
+  left: 40%;
+  top: 10px;
+  border: none;
+}
+
+#back{
+  position: relative;
+  right: 82%;
 }
