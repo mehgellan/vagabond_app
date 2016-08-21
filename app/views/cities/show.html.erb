@@ -10,11 +10,8 @@
       <div class="card blue-grey darken-1">
         <div class="card-content white-text">
           <span class="card-title"><%= link_to "#{post.title}", city_post_path(@city, post.id) %></span>
+          <p><%= post.text %></p>
           <p><%= post.user.first_name %></p>
-        </div>
-        <div class="card-action">
-          <a href="#"><i class="small material-icons">delete</i></a>
-          <a href="#"><i class="small material-icons">mode_edit</i></a>
         </div>
       </div>
     </div>

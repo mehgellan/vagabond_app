@@ -24,9 +24,7 @@
         <%= link_to edit_city_post_path do %>
           <i class="small material-icons">mode_edit</i>
         <% end %>
-        <%= button_to delete_city_post_path, method: :delete do %>
-          <i class="small material-icons">delete</i>
-        <% end %>
+        <%= link_to raw('<i class="small material-icons">delete</i>'), delete_city_post_path, method: :delete %>
       </div>
     </div>
   </div>
