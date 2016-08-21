@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     user_id = current_user[:id]
     new_post[:user_id] = user_id
     city.posts << new_post
-    redirect_to city_posts_path(city)
+    redirect_to city_path(city)
   end
 
   def show
