@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all
+    if current_user
+      render :index
+    else
+      @users = User.all
+    end
   end
 
   def new
@@ -8,9 +12,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params) # TODO: add error handling
-    login(@user)
-    redirect_to @user
+    @user = User.new(user_params) # TODO: add error handling
+    if @user.save
+      redirect_to user_path(@user)
+    else
+      flash[:error] = @user.errors.full_messages.join(", ")
+      redirect_to new_user_path
+    end
   end
 
   def show
