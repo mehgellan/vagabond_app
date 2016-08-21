@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   def create
     @city = City.find_by_id(params[:city_id])
     @city.posts.push(post_params)
+    redirect_to city_path(@city)
   end
 
   def show
