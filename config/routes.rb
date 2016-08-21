@@ -14,4 +14,13 @@ Rails.application.routes.draw do
   get "/cities/new", to: "cities#new", as: "new_city"
   post "/cities", to: "cities#create"
   get "/cities/:id", to: "cities#show", as: "city"
+
+  get "/cities/:city_id/posts", to: "posts#index", as: "city_posts"
+  get "/cities/:city_id/posts/new", to: "posts#new", as: "new_city_post"
+  post "/cities/:city_id/posts", to: "posts#create"
+  get "/cities/:city_id/posts/:id", to: "posts#show", as: "city_post"
+
+  # resources :cities do
+  #   resources :posts
+  # end
 end
