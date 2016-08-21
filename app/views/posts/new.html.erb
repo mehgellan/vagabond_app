@@ -1,11 +1,7 @@
 <div class="form-wrapper">
   <div class="container">
     <div class="col-md-6">
-<<<<<<< HEAD
-      <%= form_for create_post_path, method: "post" do |f| %>
-=======
       <%= form_for [@city, @post] do |f| %>
->>>>>>> development
         <div>
           <%= f.text_field :title, placeholder: "Title" %>
         </div>
