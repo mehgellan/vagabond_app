@@ -28,6 +28,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @city = City.find_by_id(params[:city_id])
     post_id = params[:id]
     @post = Post.find_by_id(post_id)
   end
@@ -35,8 +36,9 @@ class PostsController < ApplicationController
   def update
     @city = City.find_by_id(params[:city_id])
     user_id = current_user[:id]
-    @post = Post.find_by_id(params[:id], user_id)
-    @post.update_attributes(post_params)
+    @post = Post.find_by_id(params[:id])
+    @post[:user_id] = user_id
+    @post.update(post_params)
     flash[:notice] = "Post update succesful!"
     redirect_to city_post_path
   end

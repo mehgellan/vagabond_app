@@ -19,8 +19,8 @@ Rails.application.routes.draw do
   get "/cities/:city_id/posts/new", to: "posts#new", as: "new_city_post"
   post "/cities/:city_id/posts", to: "posts#create"
   get "/cities/:city_id/posts/:id", to: "posts#show", as: "city_post"
-  get "/cities/:city_id/posts/:id/edit", to: "posts#edit", as: "edit_posts"
-  patch "/cities/:city_id/posts", to: "posts#update"
+  get "/cities/:city_id/posts/:id/edit", to: "posts#edit", as: "edit_city_posts"
+  patch "/cities/:city_id/posts/:id", to: "posts#update"
 
   # resources :cities do
   #   resources :posts
