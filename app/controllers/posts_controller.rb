@@ -24,7 +24,6 @@ class PostsController < ApplicationController
   def edit
     post_id = params[:id]
     @post = Post.find_by_id(post_id)
-    render :show
   end
 
 
