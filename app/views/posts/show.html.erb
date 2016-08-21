@@ -1,0 +1,25 @@
+
+<div class="col s12 m7 profile_card">
+  <div class="p_card">
+  <h3 class="header">City</h3>
+  </div>
+  <div class="card small horizontal">
+    <div class="card-image">
+      <img src="http://www.indypendent.org/wp-content/photos/page14_kunstler.jpg">
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <p><%= @post.text %></p>
+      </div>
+      <div class="card-content">
+        <p><div class="chip">
+    <img src="http://www.eilatgordinlevitan.com/kurenets/k_pix/kunstler/060508_30_b.gif" alt="Contact Person">
+    <%= @post.user.first_name %> <%= @post.user.last_name%></p>
+  </div>
+      </div>
+      <div class="card-action">
+        <a><%= @post.title %></a>
+      </div>
+    </div>
+  </div>
+</div>

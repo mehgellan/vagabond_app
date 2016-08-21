@@ -50,22 +50,60 @@ main {
   text-align: center;
 }
 
-h1 {
+.form-wrapper {
+  text-align: center;
+  color: black;
+  background-color: rgba(255, 255, 255, .3);
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 70px;
+  margin-bottom: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+#splash {
   color: white;
   position: absolute;
   top: 50%;
+  left: 3%;
+  text-align: center;
+  font-family: roboto;
+}
+
+.city_wrapper {
+  text-align: center;
+}
+.cityShow {
+  color: white;
+  position: absolute;
+  top: 10%;
   text-align: center;
   font-family: roboto;
 }
 h5 {
   color: white;
   position: absolute;
-  top: 63%;
+  top: 62%;
   left: 20%;
   text-align: center;
-  font-family: sans-serif;
+  font-family: roboto;
 }
-
+.login{
+  position: relative;
+  top: 50%;
+}
+.form_for{
+  color: black;
+  width: 200px;
+  position: absolute;
+  top: 45%;
+  left: 43%;
+  background-color: rgba(255, 255, 255, .3);
+  padding-bottom: 10px;
+  padding-left: 5px;
+}
 #video-background {
   position: absolute;
   bottom: 0px;
@@ -76,4 +114,43 @@ h5 {
   height: auto;
   z-index: -1000;
   overflow: hidden
+}
+
+.profile_name {
+  font-size: 30px;
+}
+
+.location_name {
+  font-size: 20px;
+}
+
+.profile_image {
+  padding-top: 2%;
+}
+
+.card {
+  width: 360px;
+  text-align: center;
+}
+.profile_card {
+  margin-left: 5%;
+}
+
+.profile_image {
+  padding-top: 2%;
+}
+
+.intro {
+  background-image: url(https://hd.unsplash.com/photo-1450149632596-3ef25a62011a);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding-top: 13%;
+  padding-bottom: 13%;
+  margin-bottom: 50px;
+}
+
+.intro h1 {
+  font-weight: 900;
+  text-transform: uppercase;
 }

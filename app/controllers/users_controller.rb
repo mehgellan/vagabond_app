@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
+
   def index
-    @users = User.all
+    if current_user
+      render :index
+    else
+      @users = User.all
+    end
   end
 
   def new
@@ -8,9 +13,15 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params) # TODO: add error handling
-    login(@user)
-    redirect_to @user
+    @user = User.new(user_params)
+    if @user.save
+      flash[:success] = "Succesfully created account."
+      login(@user)
+      redirect_to user_path(@user)
+    else
+      flash[:error] = @user.errors.full_messages.join(", ")
+      redirect_to new_user_path
+    end
   end
 
   def show
@@ -18,19 +29,18 @@ class UsersController < ApplicationController
   end
 
   def edit
-    user_id = params[:id]
-    @user = User.find_by_id(user_id)
+    @user = User.find_by_id(params[:id])
   end
 
   def update
-    user_id = params[:id]
-    @user = User.find_by_id(user_id) # TODO: add error handling
+    @user = User.find_by_id(params[:id])
     @user.update_attributes(user_params)
+    flash[:notice] = "Profile update succesful!"
     redirect_to user_path(@user)
   end
 
-
   private
+
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :city, :state, :password)
     end
