@@ -46,13 +46,13 @@ class PostsController < ApplicationController
   def destroy
     @city = City.find_by_id(params[:city_id])
     @post = Post.find_by_id(params[:id])
-
-    if current_user
-      @post.destroy
-      redirect_to city_path(@city)
-    else
-      redirect_to city_post_path(@city, @post)
-    end
+    @post.destroy
+    redirect_to city_path(@city)
+    # if current_user
+    #
+    # else
+    #   redirect_to city_post_path(@city, @post)
+    # end
   end
 
   private
