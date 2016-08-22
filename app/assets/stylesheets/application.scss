@@ -168,3 +168,24 @@ h5 {
   position: relative;
   right: 82%;
 }
+
+.post{
+  display: inline;
+  overflow: auto;
+  width: 100%;
+}
+
+.addpost {
+  font-size: 30px;
+  color: black;
+}
+
+.color{
+  background-color: rgba(0, 0, 0, .3);
+  position: absolute;
+  margin-top: 15%;
+}
+
+.top{
+  top: 300px;
+}
