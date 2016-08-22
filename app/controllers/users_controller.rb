@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find_by_id(params[:id])
     @user.update_attributes(user_params)
-    if session[:user_id] == @post.user_id
+    if session[:user_id] == @user.id
       flash[:success] = "Profile update succesful!"
       redirect_to user_path(@user)
     else
