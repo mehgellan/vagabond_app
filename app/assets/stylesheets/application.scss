@@ -28,7 +28,7 @@
  .gif-background {
    background-image: url(https://media.giphy.com/media/l0HlPeC7bADsk4RnW/giphy.gif);
    background-repeat: no-repeat;
-   background-size: 100%;
+   background-size: cover;
    background-color: #fff;
    display: flex;
    min-height: 100vh;
@@ -125,16 +125,11 @@
 }
 
 .intro {
-  background-image: url(https://hd.unsplash.com/photo-1450149632596-3ef25a62011a);
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
-  padding-top: 13%;
-  padding-bottom: 13%;
-  margin-bottom: 50px;
-}
-
-.intro h1 {
+  padding-top: 3%;
+  padding-bottom: 3%;
   font-weight: 900;
   text-transform: uppercase;
 }
@@ -158,4 +153,39 @@
 #back{
   position: relative;
   right: 82%;
+}
+
+.post{
+  display: inline;
+  overflow: auto;
+  width: 100%;
+}
+
+.addpost {
+  font-size: 30px;
+  color: black;
+}
+
+.color{
+  background-color: rgba(38, 166, 154,.9);
+  position: absolute;
+  margin-top: 15%;
+  color: white;
+}
+
+.top{
+  top: 300px;
+}
+
+.jumbotron{
+  height: auto;
+  width: 800px;
+}
+
+.cities{
+  width: 600px;
+}
+
+::-webkit-input-placeholder {
+    color:    #666666;
 }
