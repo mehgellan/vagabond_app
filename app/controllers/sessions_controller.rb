@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    flash[:notice] = "Logout succesful. See you soon!"
+    flash[:success] = "Logout succesful. See you soon!"
     logout
     redirect_to root_path
   end
