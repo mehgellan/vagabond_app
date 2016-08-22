@@ -1,17 +1,8 @@
-<<<<<<< Updated upstream
 <div class="intro">
   <h1 class="white-text text-lighten-5">Welcome to <%= @city.city %></h1>
-      <img class="responsive-image" src=<%= @city.image %>>
+      <img class="jumbotron responsive-image" src=<%= @city.image %>>
       <h1 class="black-text text-lighten-5">Welcome to <%= @city.city %></h1>
   </div>
-=======
-<div class="container">
-    <div class="intro deep-orange lighten-2 z-depth-1">
-      <img class="jumbotron responsive-image" src=<%= @city.image %>>
-      <h1 class="white-text text-lighten-5">Welcome to <%= @city.city %></h1>
-  </div
-</div>
->>>>>>> Stashed changes
 <br>
 <div class="post center">
   <%= link_to "Add new post!", new_city_post_path(@city.id), method: :get, :class => "waves-effect waves-light btn" %>
