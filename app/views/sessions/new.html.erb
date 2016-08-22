@@ -1,17 +1,21 @@
-<body class = "gif-background">
 
-<div class="form_for">
+<body class = "gif-background">
+  <div class="form_for">
+    <%= form_for @user, url: "/sessions", method: "post" do |f| %>
+    <div>
+      <%= f.text_field :email, placeholder: "Email" %>
+    </div>
+    <div>
+      <%= f.password_field :password, placeholder: "Password" %>
+    </div>
+    <div>
+      <%= f.submit "Log In", :class => 'waves-effect waves-light btn login'%>
+    </div>
+    <% end %>
+<div class=" log_in form_for">
 <%= form_for @user, url: "/sessions", method: "post" do |f| %>
   <div>
     <%= f.text_field :email, placeholder: "Email" %>
   </div>
-  <div>
-    <%= f.password_field :password, placeholder: "Password" %>
-  </div>
-  <div>
-    <%= f.submit "Log In", :class => 'waves-effect waves-light btn login'%>
-  </div>
-<% end %>
-</div>
 
 </body>
