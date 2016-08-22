@@ -6,6 +6,11 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @city = City.find_by_id(params[:city_id])
+    if session[:user_id] == @user[:id]
+      render :new
+    else
+      redirect_to user_login_path
+    end
   end
 
   def create
