@@ -34,7 +34,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find_by_id(params[:id])
     if session[:user_id] != @user[:id]
-      flash[:alert] = "This ain't your profile!"
+      flash[:error] = "Sorry! You can only edit your own profile."
       redirect_to user_path
     else
       render :edit
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     @user = User.find_by_id(params[:id])
     @user.update_attributes(user_params)
     if session[:user_id] == @post.user_id
-      flash[:notice] = "Profile update succesful!"
+      flash[:success] = "Profile update succesful!"
       redirect_to user_path(@user)
     else
       redirect_to user_path(@user)
