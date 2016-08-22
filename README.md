@@ -3,8 +3,8 @@
 A travel community for users to share city-specific tips ("posts") about their favorite locations around the world. Full-stack Rails App deployed on Heroku (https://knotty-pines.herokuapp.com/)
 
 ##### Admin Login Info
-- email : ad@min.com
-- password: qwerty
+- email : swittervagabond@gmail.com
+- password: admin
 
 
 ### Technologies Used
