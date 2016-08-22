@@ -10,6 +10,7 @@ class PostsController < ApplicationController
 
   def create
     city = City.find_by_id(params[:city_id])
+    logged_in?
     new_post = Post.new(post_params)
     user_id = current_user[:id]
     new_post[:user_id] = user_id

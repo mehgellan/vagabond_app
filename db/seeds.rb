@@ -1,5 +1,5 @@
 cities_data = [
-  {city: "San Francisco", state: "California", country: "USA", image: "http://imgur.com/a/8Gzjc"},
+  {city: "San Francisco", state: "California", country: "USA", image: "https://hd.unsplash.com/photo-1450149632596-3ef25a62011a"},
   {city: "Chicago", state: "Illinois", country: "USA", image: "http://static1.squarespace.com/static/546a7122e4b0b5dd39a15b64/t/546adb64e4b0fc11a01c39f7/1416289128048/Chicago.png"},
   {city: "New York City", state: "New York", country: "USA", image: "http://www.worldpropertyjournal.com/news-assets/Lower-Manhattan-sunset-New-York-City-keyimage.png"},
   {city: "London", state: nil, country: "England", image: "http://thecoffeevine.com/wp-content/uploads/2016/04/london.jpg"},
