@@ -5,12 +5,12 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @city = City.find_by_id(params[:city_id])
+    @city = City.find_by_slug(params[:city_id])
   end
 
   def create
-    city = City.find_by_id(params[:city_id])
     logged_in?
+    city = City.find_by_slug(params[:city_id])
     new_post = Post.new(post_params)
     user_id = current_user[:id]
     new_post[:user_id] = user_id
@@ -26,14 +26,18 @@ class PostsController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
-    @city = City.find_by_id(params[:city_id])
+    @city = City.find_by_slug(params[:city_id])
     @post = Post.find_by_id(params[:id])
   end
 
   def edit
-    @city = City.find_by_id(params[:city_id])
+    @city = City.find_by_slug(params[:city_id])
     post_id = params[:id]
     @post = Post.find_by_id(post_id)
+    if session[:user_id] != @post.user_id
+      redirect_to cities_path
+      flash[:alert] = "This post does not belong to you!"
+    end
   end
 
   def update
@@ -41,26 +45,29 @@ class PostsController < ApplicationController
     user_id = current_user[:id]
     @post = Post.find_by_id(params[:id])
     @post[:user_id] = user_id
-    @post.update(post_params)
-    flash[:notice] = "Post update succesful!"
-    redirect_to city_post_path
+    if session[:user_id] == @post.user_id
+      @post.update(post_params)
+      flash[:notice] = "Post update succesful!"
+      redirect_to city_post_path
+    else
+      redirect_to user_login_path
+    end
   end
 
   def destroy
-    @city = City.find_by_id(params[:city_id])
+    @city = City.find_by_slug(params[:city_id])
     @post = Post.find_by_id(params[:id])
-    @post.destroy
-    flash[:notice] = "Post succesfully deleted!"
-    redirect_to city_path(@city)
-    # if current_user
-    #
-    # else
-    #   redirect_to city_post_path(@city, @post)
-    # end
+    if session[:user_id] == @post.user_id
+      @post.destroy
+      flash[:notice] = "Post succesfully deleted!"
+      redirect_to city_path(@city)
+    else
+      flash[:notice] = "You must be logged in as #{@post.user.first_name}"
+      redirect_to city_path(@city)
+    end
   end
 
   private
-
     def post_params
       params.require(:post).permit(:title, :text)
     end
