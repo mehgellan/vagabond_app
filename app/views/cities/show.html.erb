@@ -3,7 +3,7 @@
 </div>
 <br>
 <div class="post center">
-  <%= link_to "Add new post!", new_city_post_path(@city.id) %>
+  <%= link_to "Add new post!", new_city_post_path(@city) %>
   <% @city.posts.reverse_each do |post| %>
   <div class="row">
     <div class="col s6 m4">
