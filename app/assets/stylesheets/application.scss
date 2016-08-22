@@ -151,7 +151,7 @@
 }
 
 #back{
-  position: relative;
+  position: absolute;
   right: 82%;
 }
 
@@ -188,4 +188,13 @@
 
 ::-webkit-input-placeholder {
     color:    #666666;
+}
+
+.link-to-text-color {
+  color: #fff;
+}
+
+.chip_left{
+  position: relative;
+  right: 40%;
 }
