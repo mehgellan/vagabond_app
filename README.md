@@ -1,20 +1,25 @@
 # Project Vagabond
 
-A travel community for users to share city-specific tips ("posts" or "logs") about their favorite locations around the world. Full-stack Rails App deployed on Heroku (heroku link).
+A travel community for users to share city-specific tips ("posts") about their favorite locations around the world. Full-stack Rails App deployed on Heroku (https://knotty-pines.herokuapp.com/)
+
+##### Admin Login Info
+- email : ad@min.com
+- password: qwerty
+
 
 ### Technologies Used
 
-* Ruby, Rails
-* Paperclip
+* Ruby on Rails
+* HTML/CSS
+* JavaScript, CoffeeScript
+* ActiveRecord
 * Materialize, SCSS
-* AngularJS
 
 ### Deliverables
 
 * Basic Auth & Profiles
 * Full CRUD
 * Validations & Authorizations
-* Commenting
 
 #### Wireframes
 
@@ -22,4 +27,4 @@ A travel community for users to share city-specific tips ("posts" or "logs") abo
 
 #### ERD - Entity Relationship Diagram
 
-![Alt text](http://i.imgur.com/et1AXsZ.png "Vagabond ERD")
+![Alt text](https://ga-students.slack.com/files/switt/F23PCP4M8/screenshot_2016-08-22_11.30.21.png "Vagabond ERD")

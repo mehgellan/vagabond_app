@@ -1,29 +1,29 @@
+<body class="gif-background">
 <div class="form-wrapper">
-<div class="container">
-<div class="col-md-6">
-<%= form_for @user do |f| %>
-  <div>
-      <%= f.text_field :first_name, placeholder: "First Name" %>
+  <div class="container">
+    <div class="col-md-6">
+      <%= form_for @user do |f| %>
+      <div>
+        <%= f.text_field :first_name, placeholder: "First Name" %>
+      </div>
+      <div>
+        <%= f.text_field :last_name, placeholder: "Last Name" %>
+      </div>
+      <div>
+        <%= f.text_field :email, placeholder: "Email" %>
+      </div>
+      <div>
+        <%= f.text_field :city, placeholder: "City" %>
+      </div>
+      <div>
+        <%= f.text_field :state, placeholder: "State" %>
+      </div>
+      <div>
+        <%= f.password_field :password, placeholder: "Password" %>
+      </div>
+      <%= f.submit "Submit", :class => 'waves-effect waves-light btn' %>
+      <% end %>
     </div>
-    <div>
-      <%= f.text_field :last_name, placeholder: "Last Name" %>
-    </div>
-    <div>
-      <%= f.text_field :email, placeholder: "Email" %>
-    </div>
-    <div>
-      <%= f.text_field :city, placeholder: "City" %>
-    </div>
-    <div>
-      <%= f.text_field :state, placeholder: "State" %>
-    </div>
-    <div>
-      <%= f.password_field :password, placeholder: "Password" %>
-    </div>
-<%= f.submit "Submit", :class => 'waves-effect waves-light btn' %>
-<% end %>
+  </div>
 </div>
-</div>
-</div>
-
-<!-- <%= render 'layouts/footer' %> -->
+</body>

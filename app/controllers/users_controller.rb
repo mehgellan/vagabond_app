@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      NewUserEmailMailer.notify_user(@user).deliver
       flash[:success] = "Succesfully created account."
       login(@user)
       redirect_to user_path(@user)
@@ -32,19 +33,27 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find_by_id(params[:id])
+    if session[:user_id] != @user[:id]
+      flash[:error] = "Sorry! You can only edit your own profile."
+      redirect_to user_path
+    else
+      render :edit
+    end
   end
 
   def update
     @user = User.find_by_id(params[:id])
     @user.update_attributes(user_params)
-    flash[:notice] = "Profile update succesful!"
-    redirect_to user_path(@user)
+    if session[:user_id] == @post.user_id
+      flash[:success] = "Profile update succesful!"
+      redirect_to user_path(@user)
+    else
+      redirect_to user_path(@user)
+    end
   end
 
   private
-
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :city, :state, :password)
     end
-
 end

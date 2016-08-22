@@ -1,10 +1,10 @@
 
-<div class="col s12 m7">
+<div class="col s12 m7 top">
   <div>
   </div>
-  <div class="card small horizontal">
+  <div class="card small horizontal color">
     <div class="card-image">
-      <img src="http://www.indypendent.org/wp-content/photos/page14_kunstler.jpg">
+      <img src=<%= @city.image %>>
     </div>
     <div class="card-stacked">
       <div class="card-content">
@@ -18,14 +18,15 @@
         </div>
          Member Since:  <%= @post.user.created_at.strftime("%d %b. %Y") %>
       </div>
-
+      <% if session[:user_id] == @post.user_id %>
       <div class="card-action" id="delete_edit">
         <%= link_to edit_city_post_path do %>
         <i class="small material-icons">mode_edit</i>
         <% end %>
-        <%= link_to raw('<i class="small material-icons">delete</i>'), delete_city_post_path, method: :delete %>
+        <%= link_to raw('<i class="small material-icons">delete</i>'), delete_city_post_path, method: :delete, data: { confirm: "Are you sure you want to delete #{@post.title}?" } %>
+        <% end %>
         <span id="back">
-          <%= link_to "Back to #{@city.city}", city_path(@city) %>
+          <%= link_to "Back to #{@city.city}", city_path(@city), class: 'link-to-text-color' %>
         </span>
       </div>
     </div>
