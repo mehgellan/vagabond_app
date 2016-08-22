@@ -5,7 +5,7 @@
   </div>
 <br>
 <div class="post center">
-  <%= link_to "Add new post!", new_city_post_path(@city.id), method: :get, :class => "waves-effect waves-light btn" %>
+  <%= link_to "Add new post!", new_city_post_path(@city), method: :get, :class => "waves-effect waves-light btn" %>
   <% @city.posts.reverse_each do |post| %>
     <div class="col s6 m4">
       <div class="card blue-grey darken-1">
