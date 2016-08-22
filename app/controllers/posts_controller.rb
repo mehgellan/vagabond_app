@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
+    logged_in?
     city = City.find_by_id(params[:city_id])
     new_post = Post.new(post_params)
     user_id = current_user[:id]
