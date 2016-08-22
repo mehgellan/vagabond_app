@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      NewUserEmailMailer.notify_user(@user).deliver
       flash[:success] = "Succesfully created account."
       login(@user)
       redirect_to user_path(@user)
