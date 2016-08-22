@@ -27,4 +27,4 @@ A travel community for users to share city-specific tips ("posts") about their f
 
 #### ERD - Entity Relationship Diagram
 
-![Alt text](https://ga-students.slack.com/files/switt/F23PCP4M8/screenshot_2016-08-22_11.30.21.png "Vagabond ERD")
+![Alt text](http://i.imgur.com/5y7KJf6.png "Vagabond ERD")
