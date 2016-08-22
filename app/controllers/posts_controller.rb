@@ -45,26 +45,29 @@ class PostsController < ApplicationController
     user_id = current_user[:id]
     @post = Post.find_by_id(params[:id])
     @post[:user_id] = user_id
-    @post.update(post_params)
-    flash[:notice] = "Post update succesful!"
-    redirect_to city_post_path
+    if session[:user_id] == @post.user_id
+      @post.update(post_params)
+      flash[:notice] = "Post update succesful!"
+      redirect_to city_post_path
+    else
+      redirect_to user_login_path
+    end
   end
 
   def destroy
     @city = City.find_by_id(params[:city_id])
     @post = Post.find_by_id(params[:id])
-    @post.destroy
-    flash[:notice] = "Post succesfully deleted!"
-    redirect_to city_path(@city)
-    # if current_user
-    #
-    # else
-    #   redirect_to city_post_path(@city, @post)
-    # end
+    if session[:user_id] == @post.user_id
+      @post.destroy
+      flash[:notice] = "Post succesfully deleted!"
+      redirect_to city_path(@city)
+    else
+      flash[:notice] = "You must be logged in as #{@post.user.first_name}"
+      redirect_to city_path(@city)
+    end
   end
 
   private
-
     def post_params
       params.require(:post).permit(:title, :text)
     end
