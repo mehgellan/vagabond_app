@@ -1,6 +1,6 @@
 <% @cities.each do |city| %>
   <div>
-    <h3><%= city.city %></h3>
+    <h3><%= link_to city.city, city_path(city) %></h3>
     <h3><%= city.state %></h3>
     <h3><%= city.country %></h3>
   </div>

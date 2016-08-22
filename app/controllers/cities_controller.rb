@@ -1,6 +1,7 @@
 class CitiesController < ApplicationController
   def index
     @cities = City.all
+    @city = City.find_by_id(params[:id])
     render :index
   end
 
