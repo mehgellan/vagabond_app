@@ -16,7 +16,7 @@ class CitiesController < ApplicationController
   end
 
   def show
-    @city = City.find_by_id(params[:id])
+    @city = City.find_by_city(params[:id].gsub('-', ' ').titleize)
   end
 
   private
