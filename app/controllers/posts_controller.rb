@@ -41,7 +41,7 @@ class PostsController < ApplicationController
     @post = Post.find_by_id(params[:id])
     @post[:user_id] = user_id
     @post.update(post_params)
-    flash[:notice] = "Post update succesful!"
+    flash[:success] = "Post update succesful!"
     redirect_to city_post_path
   end
 
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
     @city = City.find_by_id(params[:city_id])
     @post = Post.find_by_id(params[:id])
     @post.destroy
-    flash[:notice] = "Post succesfully deleted!"
+    flash[:success] = "Post succesfully deleted!"
     redirect_to city_path(@city)
     # if current_user
     #
