@@ -36,7 +36,7 @@ class PostsController < ApplicationController
     @post = Post.find_by_id(post_id)
     if session[:user_id] != @post.user_id
       redirect_to cities_path
-      flash[:alert] = "This post does not belong to you!"
+      flash[:error] = "This post does not belong to you!"
     end
   end
 
@@ -47,7 +47,7 @@ class PostsController < ApplicationController
     @post[:user_id] = user_id
     if session[:user_id] == @post.user_id
       @post.update(post_params)
-      flash[:notice] = "Post update succesful!"
+      flash[:error] = "Post update succesful!"
       redirect_to city_post_path
     else
       redirect_to user_login_path
@@ -59,10 +59,10 @@ class PostsController < ApplicationController
     @post = Post.find_by_id(params[:id])
     if session[:user_id] == @post.user_id
       @post.destroy
-      flash[:notice] = "Post succesfully deleted!"
+      flash[:error] = "Post succesfully deleted!"
       redirect_to city_path(@city)
     else
-      flash[:notice] = "You must be logged in as #{@post.user.first_name}"
+      flash[:errror] = "You must be logged in as #{@post.user.first_name}"
       redirect_to city_path(@city)
     end
   end
