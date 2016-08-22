@@ -25,6 +25,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @post = Post.find_by_id(params[:post_id])
+    @city = City.find_by_id(params[:city_id])
     @user = User.find_by_id(params[:id])
   end
 
