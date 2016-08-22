@@ -5,6 +5,8 @@
   <span class="profile_name">
     <%= @user.first_name %> <%= @user.last_name %><br></span>
   <span class="location_name"><%= @user.city %>, <%=@user.state %><br></span>
+  <div>
+    <p> <%= link_to "Browse Cities", cities_path %>
 </div>
 <% @user.posts.each do |f| %>
 <div class="col s12 m7 profile_card">
@@ -14,10 +16,8 @@
     </div>
     <div class="card-stacked">
       <div class="card-content">
+        <h4> <%= f.title %> </h4>
         <p><%= f.text %></p>
-      </div>
-      <div class="card-action">
-        <%= link_to f.title, user_path(f.id)%>
       </div>
     </div>
   </div>
