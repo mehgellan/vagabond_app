@@ -6,6 +6,10 @@
         <ul class="right hide-on-med-and-down">
           <li>
             <% if current_user %>
+              <div class="chip chip_left">
+                <img src="http://www.eilatgordinlevitan.com/kurenets/k_pix/kunstler/060508_30_b.gif" alt="Contact Person">
+                <%= current_user.first_name %> <%= current_user.last_name%></p>
+              </div>
               <%= link_to "Profile", user_path(current_user[:id]), :class => "waves-effect waves-light btn" %>
               <%= link_to "Edit Profile", edit_user_path(current_user[:id]), :class => "waves-effect waves-light btn" %>
               <%= link_to "Logout", user_logout_path, :class => "waves-effect waves-light btn" %>
