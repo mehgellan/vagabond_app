@@ -18,12 +18,13 @@
         </div>
          Member Since:  <%= @post.user.created_at.strftime("%d %b. %Y") %>
       </div>
-      <% if session[:user_id] == @post.user_id %>
+      <% if current_user_is_owner? %>
       <div class="card-action" id="delete_edit">
-        <%= link_to edit_city_post_path do %>
-        <i class="small material-icons">mode_edit</i>
+        <%= link_to edit_post do %>
+          <i class="small material-icons">mode_edit</i>
         <% end %>
-        <%= link_to raw('<i class="small material-icons">delete</i>'), delete_city_post_path, method: :delete, data: { confirm: "Are you sure you want to delete #{@post.title}?" } %>
+        <%= link_to @post, method: :delete, data: { confirm: "Are you sure you want to delete #{@post.title}?" } do %>
+          <i class="small material-icons">delete</i>
         <% end %>
         <span id="back">
           <%= link_to "Back to #{@city.city}", city_path(@city), class: 'link-to-text-color' %>

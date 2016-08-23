@@ -1,74 +1,70 @@
 class PostsController < ApplicationController
+
+  skip_before_action :authenticate_user!, only: [:show, :index]
+  before_action :set_city, only: [:index, :new, :show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :require_ownership!, only: [:edit, :update, :destroy]
+
+
   def index
     @posts = Post.all
   end
 
   def new
     @post = Post.new
-    @city = City.find_by_slug(params[:city_id])
   end
 
   def create
-    logged_in?
-    city = City.find_by_slug(params[:city_id])
-    new_post = Post.new(post_params)
-    user_id = current_user[:id]
-    new_post[:user_id] = user_id
-    city.posts << new_post
-    if new_post.save
-      flash[:success] = "Post created succesfully to #{city.city}!"
-      redirect_to city_path(city)
+    @post = current_user.posts.new(post_params)
+    @city.posts << @post
+    if @post.save
+      flash[:success] = "Post created succesfully to #{@city.name}!"
+      redirect_to city_path(@city)
     else
-      flash[:error] = new_post.errors.full_messages.join(", ")
+      flash[:error] = @post.errors.full_messages.join(", ")
       redirect_to new_city_post_path
     end
   end
 
   def show
-    @user = User.find_by_id(params[:id])
-    @city = City.find_by_slug(params[:city_id])
-    @post = Post.find_by_id(params[:id])
   end
 
   def edit
-    @city = City.find_by_slug(params[:city_id])
-    post_id = params[:id]
-    @post = Post.find_by_id(post_id)
-    if session[:user_id] != @post.user_id
-      redirect_to cities_path
-      flash[:error] = "This post does not belong to you!"
-    end
   end
 
   def update
-    @city = City.find_by_id(params[:city_id])
-    user_id = current_user[:id]
-    @post = Post.find_by_id(params[:id])
-    @post[:user_id] = user_id
-    if session[:user_id] == @post.user_id
-      @post.update(post_params)
-      flash[:error] = "Post update succesful!"
-      redirect_to city_post_path
-    else
-      redirect_to user_login_path
-    end
+    @post.update(post_params)
+    flash[:notice] = "Post update succesful!"
+    redirect_to city_post_path
   end
 
   def destroy
-    @city = City.find_by_slug(params[:city_id])
-    @post = Post.find_by_id(params[:id])
-    if session[:user_id] == @post.user_id
-      @post.destroy
-      flash[:error] = "Post succesfully deleted!"
-      redirect_to city_path(@city)
-    else
-      flash[:errror] = "You must be logged in as #{@post.user.first_name}"
-      redirect_to city_path(@city)
-    end
+    @post.destroy
+    flash[:error] = "Post succesfully deleted!"
+    redirect_to city_path(@city)
   end
 
+
   private
+
+    def require_ownership!
+      if !current_user_is_owner?
+        flash[:errror] = "You must be logged in as #{@post.user.first_name}"
+        redirect_to user_login_path
+      end
+    end
+
+    def set_city
+      @city = City.find_by_slug(params[:city_id])
+    end
+
+    def set_post
+      @post = Post.find_by_id(params[:id])
+    end
+
     def post_params
       params.require(:post).permit(:title, :text)
     end
+
+
 end

@@ -9,4 +9,10 @@ class City < ApplicationRecord
     city.downcase.gsub(" ", "-")
   end
 
+  alias_method :city, :name
+
+  # def name
+  #   city
+  # end
+
 end

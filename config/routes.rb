@@ -10,20 +10,20 @@ Rails.application.routes.draw do
   get "/users/:id/edit", to: "users#edit", as: "edit_user"
   patch "/users/:id", to: "users#update"
 
-  get "/cities", to: "cities#index", as: "cities"
-  get "/cities/new", to: "cities#new", as: "new_city"
-  post "/cities", to: "cities#create"
-  get "/cities/:id", to: "cities#show", as: "city"
+  # get "/cities", to: "cities#index", as: "cities"
+  # get "/cities/new", to: "cities#new", as: "new_city"
+  # post "/cities", to: "cities#create"
+  # get "/cities/:id", to: "cities#show", as: "city"
 
-  get "/cities/:city_id/posts", to: "posts#index", as: "city_posts"
-  get "/cities/:city_id/posts/new", to: "posts#new", as: "new_city_post"
-  post "/cities/:city_id/posts", to: "posts#create"
-  get "/cities/:city_id/posts/:id", to: "posts#show", as: "city_post"
-  get "/cities/:city_id/posts/:id/edit", to: "posts#edit", as: "edit_city_post"
-  patch "/cities/:city_id/posts/:id", to: "posts#update"
-  delete "/cities/:city_id/posts/:id", to: "posts#destroy", as: "delete_city_post"
+  # get "/cities/:city_id/posts", to: "posts#index", as: "city_posts"
+  # get "/cities/:city_id/posts/new", to: "posts#new", as: "new_city_post"
+  # post "/cities/:city_id/posts", to: "posts#create"
+  # get "/cities/:city_id/posts/:id", to: "posts#show", as: "city_post"
+  # get "/cities/:city_id/posts/:id/edit", to: "posts#edit"
+  # patch "/cities/:city_id/posts/:id", to: "posts#update"
+  # delete "/cities/:city_id/posts/:id", to: "posts#destroy"
 
-  # resources :cities do
-  #   resources :posts
-  # end
+  resources :cities, shallow: true, except: [:destroy] do
+    resources :posts
+  end
 end

@@ -18,4 +18,9 @@ class User < ApplicationRecord
     @user = User.find_by({email: params[:email]})
     @user.try(:authenticate, params[:password])
   end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
+
 end
