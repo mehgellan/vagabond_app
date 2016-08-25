@@ -29,7 +29,7 @@ gem 'materialize-sass'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-
+gem 'haml', '~> 4.0', '>= 4.0.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'figaro'
